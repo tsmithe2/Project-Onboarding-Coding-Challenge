@@ -34,12 +34,11 @@ function zeroesToEnd(arr = [])
     return arr;
 }
 
-// Uncomment these for testing.
-// console.log(zeroesToEnd([1, 2, 0, 0, 4, 0, 5]));
-// console.log(zeroesToEnd([0, 0, 2, 0, 5]));
-// console.log(zeroesToEnd([4, 4, 5]));
-// console.log(zeroesToEnd([0, 0]));
-// console.log(zeroesToEnd([0, 0, 1, 0, 1, 0, 1, 0, 1]));
+console.log(zeroesToEnd([1, 2, 0, 0, 4, 0, 5]));
+console.log(zeroesToEnd([0, 0, 2, 0, 5]));
+console.log(zeroesToEnd([4, 4, 5]));
+console.log(zeroesToEnd([0, 0]));
+console.log(zeroesToEnd([0, 0, 1, 0, 1, 0, 1, 0, 1]));
 
 
 
@@ -64,76 +63,11 @@ Notes
 -This challenge is more like recreating of the right shift operation, thus, the use of the operator directly is prohibited.
 */
 
-function shiftToRight(x = 0, y = 0)
-{
-    let result = (x.toString(2)).split("");
-    
-    if (x < 0) // use one's and two's complement to acquire correct format for the negative binary value.
-    {
-        result.shift();
-        result.unshift("0");
-        result.unshift("-");
-        
-        for (let i = 0; i < result.length; i++) // switch the bits.
-        {
-            if (result[i] === "1")
-            {
-                result[i] = "0";
-            }
-            else
-            {
-                result[i] = "1";
-            }
-        }
+const shiftToRight = (x = 0, y = 0) => {return Math.floor(x / 2**y)};
 
-        result = (parseInt(result.join(""), 2) + 1);
-        result = (result.toString(2)).split("");
-
-        for (let i = 0; i < y; i++)
-        {
-            result.pop();
-        }
-        
-        // undo the one's and two's complement.
-        result = (parseInt(result.join(""), 2) - 1);
-        result = (result.toString(2)).split("");
-
-        for (let i = 0; i < result.length; i++) // switch the bits.
-        {
-            if (result[i] === "1")
-            {
-                result[i] = "0";
-            }
-            else
-            {
-                result[i] = "1";
-            }
-        }
-
-        result.unshift("-");
-    }
-    else
-    {
-        for (let i = 0; i < y; i++)
-        {
-            result.pop();
-        }
-    }
-
-    result = parseInt(result.join(""), 2);
-
-    if (result.toString() === "NaN")
-    {
-        return 0;
-    }
-
-    return result;
-}
-
-// Uncomment these for testing.
-// console.log(shiftToRight(80, 3));
-// console.log(shiftToRight(-24, 2));
-// console.log(shiftToRight(-5, 1));
-// console.log(shiftToRight(4666, 6));
-// console.log(shiftToRight(3777, 6));
-// console.log(shiftToRight(-512, 10));
+console.log(shiftToRight(80, 3));
+console.log(shiftToRight(-24, 2));
+console.log(shiftToRight(-5, 1));
+console.log(shiftToRight(4666, 6));
+console.log(shiftToRight(3777, 6));
+console.log(shiftToRight(-512, 10));
