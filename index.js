@@ -34,10 +34,12 @@ function zeroesToEnd(arr = [])
     return arr;
 }
 
+// Uncomment these for testing.
 // console.log(zeroesToEnd([1, 2, 0, 0, 4, 0, 5]));
-// console.log(zeroesToEnd([0, 0, 1, 0, 1, 0, 1, 0, 1]));
+// console.log(zeroesToEnd([0, 0, 2, 0, 5]));
 // console.log(zeroesToEnd([4, 4, 5]));
 // console.log(zeroesToEnd([0, 0]));
+// console.log(zeroesToEnd([0, 0, 1, 0, 1, 0, 1, 0, 1]));
 
 
 
@@ -128,9 +130,10 @@ function shiftToRight(x = 0, y = 0)
     return result;
 }
 
-// shiftToRight(5, 2);
-// shiftToRight(-5, 2);
-// shiftToRight(10, 2);
-// shiftToRight(-9, 2);
-// shiftToRight(-100, 5);
-// shiftToRight(1, 1);
+// Uncomment these for testing.
+// console.log(shiftToRight(80, 3));
+// console.log(shiftToRight(-24, 2));
+// console.log(shiftToRight(-5, 1));
+// console.log(shiftToRight(4666, 6));
+// console.log(shiftToRight(3777, 6));
+// console.log(shiftToRight(-512, 10));
