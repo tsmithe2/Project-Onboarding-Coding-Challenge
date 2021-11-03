@@ -118,7 +118,14 @@ function shiftToRight(x = 0, y = 0)
         }
     }
 
-    return parseInt(result.join(""), 2);
+    result = parseInt(result.join(""), 2);
+
+    if (result.toString() === "NaN")
+    {
+        return 0;
+    }
+
+    return result;
 }
 
 // shiftToRight(5, 2);
@@ -126,3 +133,4 @@ function shiftToRight(x = 0, y = 0)
 // shiftToRight(10, 2);
 // shiftToRight(-9, 2);
 // shiftToRight(-100, 5);
+// shiftToRight(1, 1);
